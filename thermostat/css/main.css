@@ -1,0 +1,18 @@
+body {
+    background-color: magenta;
+    color: white;
+}
+
+#temperature {
+    font-size: 300pt;
+}
+
+.high-usage {
+    color: red;
+}
+.medium-usage {
+    color: orange;
+}
+.low-usage {
+    color: green;
+}
