@@ -1,11 +1,20 @@
 body {
+    font-family: "Comic Sans MS";
+    font-weight: bold;
+    font-style: italic;
     background-color: magenta;
     color: white;
 }
 
 #temperature {
-    font-size: 300pt;
+    font-size: 400pt;
+    /* line-height: 400pt; */
+    /* z-index: -1; */
 }
+
+/* #controls {
+    z-index: 0;
+} */
 
 .high-usage {
     color: red;
@@ -16,3 +25,25 @@ body {
 .low-usage {
     color: green;
 }
+
+body {
+    perspective:70000px;
+  }
+  .spinner {
+    text-align: center;
+    animation-name: spin, spin2, depth;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+  }
+  @keyframes spin {
+    from { transform: rotateY(90deg); }
+    to { transform: rotateY(-90deg); }
+  }
+  @keyframes depth {
+    0% { text-shadow: 0 0 black; }
+    25% { text-shadow: 1px 0 black, 2px 0 black, 3px 0 black, 4px 0 black, 5px 0 black; }
+    50% { text-shadow: 0 0 black; }
+    75% { text-shadow: -1px 0 black, -2px 0 black, -3px 0 black, -4px 0 black, -5px 0 black; }
+    100% { text-shadow: 0 0 black; }
+  }

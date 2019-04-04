@@ -11,14 +11,25 @@
 </head>
 <body>
 
-    <button id="up">Up</button>
-    <button id="down">Down</button>
-    <button id="switch">Power Saving Switch</button>
-    <button id="reset">Reset</button>
+    <div id="controls">
+        <button id="up">Up</button>
+        <button id="down">Down</button>
+        <button id="switch">Power Saving Switch</button>
+        <button id="reset">Reset</button>
+    
+        <div> Power saving is... <span id="status">On</span></div>
+    
+        <label for="city">Gimmee a city:</label>
+        <input id="city-input" type="text" name="city" value="">
+        <button id="weather">Tell me the weather in the place I wrote in the input field</button>
+        <div id="weather-status">
+            The weather in <span id="city">?!?!?!</span> is... <span id="weather-description">
+            I don&rsquo;t know yet</span> and the temperature is <span class="spinner" id="city-temperature">??</span>&deg;
+        </div>
+        
+    </div>
 
-    <div id="status">On</div>
-
-    <div id="temperature" class="medium-usage">20</div>
+    <div id="temperature" class=" spinner medium-usage">20</div>
 
     <script src="./src/interface.js"></script>
     
