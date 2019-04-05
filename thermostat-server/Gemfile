@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+ruby '2.6.0'
+
+gem 'data_mapper'
+gem 'dm-postgres-adapter'
+# gem 'rackup'
+gem 'rerun'
+gem 'sinatra'
+gem 'json'
