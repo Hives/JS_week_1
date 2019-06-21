@@ -1,32 +1,43 @@
 require 'sinatra/base'
 require 'json'
+# require_relative 'lib/thermostatModel'
 
-class Server < Sinatra::Base
+class ThermostatServer < Sinatra::Base
   enable :sessions
 
   get '/' do
-    puts "inside route"
-    "This is the route"
+    "I am running"
   end
 
   get '/thermostat' do
     puts "inside gets /thermostat"
     headers 'Access-Control-Allow-Origin' => '*'
-    content_type :json
-    p session
-    { city: session[:city],
-      temp: session[:temp] }.to_json
+    File.read('thermostat_data.txt')
+    # p data
+    # # JSON.generate({
+    # #   temp: session[:temp],
+    # #   city: session[:city]
+    # # })
+    # "nice one"
   end
 
   post '/thermostat' do
     puts "inside post /thermostat"
     headers 'Access-Control-Allow-Origin' => '*'
-    content_type :json
+    output = JSON.generate({
+      city: params[:city],
+      temp: params[:temp],
+      powersaving: params[:powersaving],
+    })
     session[:city] = params[:city]
     session[:temp] = params[:temp]
+    session[:powersaving] = params[:powersaving]
     p session
-    "Hello from the server"
+    file = File.open('thermostat_data.txt', 'w')
+    file.puts output
+    file.close
+    
+    "thanks"
   end
-
 
 end
